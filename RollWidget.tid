@@ -16,7 +16,7 @@ Text node widget
 /*global $tw: false */
 "use strict";
 
-var d20 = require("$:/plugins/tacticaltokens/d20.js/d20.js");
+var d20 = require("$:/plugins/D&DTools/d20.js/d20.js");
 
 var Widget = require("$:/core/modules/widgets/widget.js").widget;
 
