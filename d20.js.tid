@@ -43,6 +43,21 @@ var d20 = {
             return num;
         }
     },
+    
+    comboRoll: function (dice, verbose) {
+        var result = d20.verboseRoll(dice),
+            num = 0;
+
+        if(verbose) {
+            return result;
+        } else {
+            for (var i in result) {
+                num += result[i];
+            }
+
+            return num + " ( " + result + " )";
+        }
+    },
 
     /**
      * Roll a number of dice and return the result as an array.
