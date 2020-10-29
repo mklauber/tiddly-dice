@@ -42,7 +42,17 @@ RollWidget.prototype.render = function(parent,nextSibling) {
 	
 	var text = "";
 	try {
-		text = d20.roll(this.expression.textContent.trim());
+		switch (this.output) {
+			case "combo":
+				text = d20.comboRoll(this.expression.textContent.trim());
+				break;
+			case "verbose":
+				text = d20.verboseRoll(this.expression.textContent.trim());
+				break;
+			default:
+				text = d20.roll(this.expression.textContent.trim());
+		}
+		
 	} catch(err) {
 		if(!this.silence){
 			text = "Unable to parse '" + this.expression.textContent + "'";
@@ -58,6 +68,7 @@ Compute the internal state of the widget
 */
 RollWidget.prototype.execute = function() {
 	this.silence = this.getAttribute("silence",false);
+	this.output = this.getAttribute("format",false);
 	var diceroll = {
 		type: "element",
 		tag: "div",

@@ -5,7 +5,7 @@
   "list": [],
   "plugin-priority": "1",
   "plugin-type": "plugin",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "tags": "[[D&D]]",
   "source": "https://github.com/mklauber/tiddly-dice",
   "summary": "Plugin for interpreting dice rolls"
